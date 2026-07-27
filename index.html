@@ -1,15 +1,583 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=https://www.enlineoactivo.bnactivo.online/">
-  <link rel="canonical" href="https://www.enlineoactivo.bnactivo.online/">
-  <title>Redirigiendo...</title>
-  <script>
-    window.location.replace("https://www.enlineoactivo.bnactivo.online/");
-  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Activo Empresa Locales — Educación financiera para el hogar</title>
+<meta name="description" content="Activo Empresa Locales es un blog independiente de educación financiera para amas de casa: presupuesto familiar, fondo de emergencia, gastos hormiga y ahorro con ingresos irregulares. Contenido informativo, sin afiliación bancaria.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://activoempresalocales.blog/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Activo Empresa Locales">
+<meta property="og:title" content="Activo Empresa Locales — Educación financiera para el hogar">
+<meta property="og:description" content="Blog independiente de educación financiera para amas de casa. Presupuesto, ahorro y fondo de emergencia explicados con calma y sin tecnicismos.">
+<meta property="og:url" content="https://activoempresalocales.blog/">
+<meta property="og:locale" content="es_VE">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%232B4C7E'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' fill='%23FAF8F4' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+/* ============================================================
+   ACTIVO EMPRESA LOCALES — hoja de estilos global
+   Concepto: "cuaderno de cuentas" — la estética de una libreta
+   de gastos del hogar, llevada a un editorial digital limpio.
+   ============================================================ */
+
+:root{
+  --white:      #FFFFFF;
+  --marfil:     #FAF8F4;
+  --accent:     #2B4C7E;
+  --accent-soft:#5B7CA3;
+  --ink:        #2A2724;
+  --ink-soft:   #6B6558;
+  --line:       #E4DFD3;
+  --line-strong:#D8D1C0;
+
+  --font-display: 'Cormorant Garamond', 'Georgia', serif;
+  --font-body:    'DM Sans', 'Helvetica Neue', sans-serif;
+
+  --col: 740px;
+}
+
+*{ box-sizing:border-box; }
+
+html{ scroll-behavior:smooth; }
+
+body{
+  margin:0;
+  background:var(--white);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:19px;
+  line-height:1.9;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+a{ color:var(--accent); text-decoration:underline; text-underline-offset:3px; text-decoration-color:var(--line-strong); }
+a:hover{ text-decoration-color:var(--accent); }
+a:focus-visible, button:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; }
+
+h1,h2,h3,h4{
+  font-family:var(--font-display);
+  color:var(--ink);
+  font-weight:600;
+  line-height:1.15;
+  margin:0 0 .5em 0;
+}
+
+.eyebrow{
+  font-family:var(--font-body);
+  font-size:13px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--accent);
+  font-weight:700;
+}
+
+.container{ max-width:1180px; margin:0 auto; padding:0 32px; }
+.prose-col{ max-width:var(--col); margin:0 auto; }
+
+/* ---------- textura de libreta ---------- */
+.ledger-lines{
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent, transparent 43px,
+    var(--line) 43px, var(--line) 44px
+  );
+}
+
+/* ---------- barra de exención (arriba de todo) ---------- */
+.affiliation-bar{
+  background:var(--accent);
+  color:var(--white);
+  font-size:13px;
+  text-align:center;
+  padding:9px 16px;
+  letter-spacing:.01em;
+}
+.affiliation-bar strong{ font-weight:700; }
+
+/* ---------- encabezado ---------- */
+header.site-header{
+  background:var(--white);
+  border-bottom:1px solid var(--line);
+  padding:22px 0;
+}
+.header-inner{
+  display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:14px;
+}
+.brand{ display:flex; flex-direction:column; gap:2px; }
+.brand-name{
+  font-family:var(--font-display);
+  font-size:28px; font-weight:700; color:var(--ink);
+  letter-spacing:.01em;
+}
+.brand-tag{ font-size:13px; color:var(--ink-soft); font-family:var(--font-body); }
+
+nav.site-nav ul{
+  list-style:none; display:flex; gap:26px; margin:0; padding:0;
+  font-size:14.5px;
+}
+nav.site-nav a{
+  color:var(--ink-soft); text-decoration:none; border-bottom:1px solid transparent;
+  padding-bottom:2px;
+}
+nav.site-nav a:hover{ color:var(--accent); border-bottom-color:var(--accent); }
+
+/* ---------- hero / primera pantalla ---------- */
+.hero{
+  background:var(--marfil);
+  padding:64px 0 56px;
+  border-bottom:1px solid var(--line);
+}
+.hero-grid{
+  display:grid; grid-template-columns: 1.15fr .85fr; gap:56px; align-items:center;
+}
+.hero h1{ font-size:46px; margin-bottom:18px; }
+.hero .lede{ font-size:19px; color:var(--ink-soft); max-width:520px; margin-bottom:22px; }
+.hero .identity-card{
+  background:var(--white);
+  border:1px solid var(--line-strong);
+  border-radius:2px;
+  padding:26px 28px;
+  position:relative;
+  box-shadow:0 1px 0 var(--line);
+}
+.hero .identity-card::before{
+  content:"";
+  position:absolute; top:0; right:0;
+  width:0; height:0;
+  border-style:solid;
+  border-width:0 22px 22px 0;
+  border-color:transparent var(--marfil) transparent transparent;
+}
+.identity-card dt{
+  font-size:11.5px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--accent-soft); margin-top:14px; font-family:var(--font-body); font-weight:700;
+}
+.identity-card dt:first-child{ margin-top:0; }
+.identity-card dd{ margin:2px 0 0 0; font-size:15.5px; color:var(--ink); line-height:1.5; }
+.identity-card .no-list{ font-size:14px; color:var(--ink-soft); margin-top:18px; padding-top:16px; border-top:1px dashed var(--line-strong); line-height:1.6; }
+
+/* ---------- secciones editoriales ---------- */
+.section{ padding:68px 0; }
+.section.alt{ background:var(--marfil); }
+.section-head{ max-width:var(--col); margin:0 auto 30px; }
+.section-head .eyebrow{ display:block; margin-bottom:10px; }
+.section-head h2{ font-size:32px; }
+
+.section p{ margin:0 0 1.35em 0; }
+.section p:last-child{ margin-bottom:0; }
+
+blockquote.margin-note{
+  font-family:var(--font-display);
+  font-style:italic;
+  color:var(--accent);
+  font-size:22px;
+  line-height:1.5;
+  border-left:2px solid var(--accent);
+  padding-left:20px;
+  margin:1.6em 0;
+}
+
+/* ---------- tarjetas de publicaciones (tipo ficha) ---------- */
+.posts-grid{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:26px;
+  max-width:1180px; margin:0 auto;
+}
+.post-card{
+  background:var(--white);
+  border:1px solid var(--line-strong);
+  padding:26px 24px 22px;
+  position:relative;
+}
+.post-card::after{
+  content:"";
+  position:absolute; bottom:0; right:0;
+  width:0; height:0;
+  border-style:solid;
+  border-width:0 0 16px 16px;
+  border-color:transparent transparent var(--marfil) transparent;
+}
+.post-card .post-date{ font-size:12.5px; color:var(--accent-soft); letter-spacing:.06em; text-transform:uppercase; }
+.post-card h3{ font-size:21px; margin:10px 0 8px; }
+.post-card p{ font-size:15.5px; color:var(--ink-soft); line-height:1.65; margin:0; }
+.post-card .post-author{ margin-top:16px; font-size:13px; color:var(--ink-soft); font-style:italic; font-family:var(--font-display); }
+
+/* ---------- acerca de / metodo ---------- */
+.about-grid{
+  display:grid; grid-template-columns: .9fr 1.1fr; gap:52px; align-items:start;
+  max-width:1180px; margin:0 auto;
+}
+.about-grid .prose-col{ max-width:none; }
+
+/* ---------- pie ---------- */
+footer.site-footer{
+  background:var(--ink);
+  color:#EDEAE3;
+  padding:52px 0 26px;
+  font-size:14.5px;
+}
+footer.site-footer a{ color:#EDEAE3; text-decoration-color:rgba(237,234,227,.35); }
+footer.site-footer a:hover{ text-decoration-color:#EDEAE3; }
+.footer-grid{
+  display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:40px;
+  padding-bottom:30px; border-bottom:1px solid rgba(237,234,227,.15);
+}
+.footer-col h4{ font-family:var(--font-body); font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:#B9B2A2; margin-bottom:14px; }
+.footer-col p, .footer-col a{ display:block; margin-bottom:8px; color:#D9D4C8; }
+.footer-brand{ font-family:var(--font-display); font-size:22px; color:#FFFFFF; margin-bottom:10px; }
+.footer-disclaimer{
+  font-size:13px; color:#B9B2A2; line-height:1.7; padding-top:22px; max-width:900px;
+}
+.footer-bottom{
+  padding-top:18px; font-size:12.5px; color:#8B8474;
+}
+
+/* ---------- utilidades ---------- */
+.sr-only{
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 900px){
+  .hero-grid{ grid-template-columns:1fr; }
+  .about-grid{ grid-template-columns:1fr; }
+  .posts-grid{ grid-template-columns:1fr; }
+  nav.site-nav ul{ gap:16px; flex-wrap:wrap; }
+  .hero h1{ font-size:34px; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+}
+
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Activo Empresa Locales",
+  "url": "https://activoempresalocales.blog/",
+  "description": "Blog independiente de educación financiera para amas de casa: presupuesto del hogar, fondo de emergencia, gastos hormiga y ahorro con ingresos irregulares.",
+  "inLanguage": "es",
+  "isAccessibleForFree": true,
+  "publishingPrinciples": "https://activoempresalocales.blog/#politica-editorial",
+  "publisher": {
+    "@type": "Person",
+    "name": "William de Jesús Rodríguez Lopera",
+    "email": "soporte@activoempresalocales.blog",
+    "url": "https://activoempresalocales.blog/#acerca-de"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "William de Jesús Rodríguez Lopera"
+  },
+  "blogPost": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Cómo organizar el presupuesto del hogar sin que se sienta un castigo",
+      "datePublished": "2026-07-03",
+      "author": { "@type": "Person", "name": "William de Jesús Rodríguez Lopera" },
+      "url": "https://activoempresalocales.blog/#presupuesto"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "El fondo de emergencia: la almohada que no se nota hasta que hace falta",
+      "datePublished": "2026-06-22",
+      "author": { "@type": "Person", "name": "William de Jesús Rodríguez Lopera" },
+      "url": "https://activoempresalocales.blog/#fondo-emergencia"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Gastos hormiga: esos centavos que se comen el mes entero",
+      "datePublished": "2026-06-10",
+      "author": { "@type": "Person", "name": "William de Jesús Rodríguez Lopera" },
+      "url": "https://activoempresalocales.blog/#gastos-hormiga"
+    }
+  ]
+}
+</script>
 </head>
+
 <body>
-  <p>Redirigiendo a <a href="https://www.enlineoactivo.bnactivo.online/">enlineoactivo.bnactivo.online</a>...</p>
+
+<div class="affiliation-bar">
+  <strong>Activo Empresa Locales</strong> es un blog independiente, informativo y educativo. No es un banco, no representa a ninguna entidad financiera y no vende productos ni servicios.
+</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <span class="brand-name">Activo Empresa Locales</span>
+      <span class="brand-tag">Blog independiente · Contenido informativo y educativo sobre finanzas</span>
+    </div>
+    <nav class="site-nav" aria-label="Navegación principal">
+      <ul>
+        <li><a href="#presupuesto">Presupuesto</a></li>
+        <li><a href="#acerca-de">Acerca de</a></li>
+        <li><a href="#politica-editorial">Política editorial</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#aviso-legal">Aviso legal</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ PRIMERA PANTALLA ============ -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Educación financiera para el hogar</span>
+      <h1>Las cuentas de la casa, explicadas con calma.</h1>
+      <p class="lede">Un espacio de lectura para organizar el presupuesto familiar, entender el fondo de emergencia y reconocer los gastos que se escapan sin avisar — escrito en un lenguaje cercano, sin promesas ni jerga bancaria.</p>
+      <p class="lede" style="font-size:15px; color:var(--ink-soft);">Este sitio no es un banco ni una entidad de crédito, no gestiona cuentas, no otorga préstamos y no solicita datos financieros. Es, únicamente, un blog de lectura.</p>
+    </div>
+    <div class="identity-card">
+      <dl style="margin:0;">
+        <dt>Qué es</dt>
+        <dd>Un blog independiente de divulgación en educación financiera doméstica.</dd>
+        <dt>Quién lo escribe</dt>
+        <dd>William de Jesús Rodríguez Lopera, titular y autor responsable del sitio.</dd>
+        <dt>Qué no es</dt>
+        <dd>No es un banco, no es un servicio financiero, no está afiliado a ninguna marca ni entidad, y no ofrece asesoría personalizada.</dd>
+      </dl>
+      <p class="no-list">Sitio de solo lectura. No se solicitan contraseñas, datos bancarios ni documentos de identidad en ninguna página.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ARTÍCULO 1 — PRESUPUESTO ============ -->
+<section class="section" id="presupuesto">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Presupuesto del hogar · 3 de julio de 2026 · William de Jesús Rodríguez Lopera</span>
+      <h2>Cómo organizar el presupuesto del hogar sin que se sienta un castigo</h2>
+    </div>
+    <div class="prose-col">
+      <p>Cuando se habla de presupuesto, casi siempre se piensa en restricción: dejar de comprar, apretarse el cinturón, decir que no a todo. Pero un presupuesto bien hecho no es una lista de prohibiciones, sino un mapa de lo que entra y lo que sale, para que las decisiones se tomen con información y no con el estómago apretado el día antes de cobrar.</p>
+      <p>Lo primero es mirar el ingreso real del mes, no el que uno cree tener. Muchas veces el número que se usa mentalmente es el ingreso bruto, sin restar lo que ya está comprometido: el alquiler, los servicios, la cuota del colegio. Anotar el ingreso disponible después de esos compromisos fijos da una base mucho más honesta para planear el resto.</p>
+      <blockquote class="margin-note">El presupuesto no dice qué no puedes comprar. Dice, primero, qué ya está pagado.</blockquote>
+      <p>Después conviene separar los gastos en dos grupos con una lógica simple: los que se repiten cada mes con un monto parecido, y los que varían porque dependen de decisiones del día a día. Los primeros se pueden anticipar; los segundos son los que conviene observar durante unas semanas antes de intentar ajustarlos, porque no se puede cambiar lo que no se ha medido.</p>
+      <p>Un presupuesto realista deja también un margen para imprevistos pequeños, porque un plan que no tolera ni una sola sorpresa se rompe con la primera. Y conviene revisarlo cada mes, no como una evaluación de qué tan bien o mal se hizo, sino como un ajuste de ruta: el presupuesto de enero casi nunca sirve igual en julio, y eso no es un fracaso, es lo esperable en una economía doméstica que está viva.</p>
+      <p style="font-size:14px; color:var(--ink-soft); font-style:italic; margin-top:2em;">Contenido informativo y educativo. No constituye asesoría financiera personalizada.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ARTÍCULO 2 — FONDO DE EMERGENCIA ============ -->
+<section class="section alt" id="fondo-emergencia">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Fondo de emergencia · 22 de junio de 2026 · William de Jesús Rodríguez Lopera</span>
+      <h2>El fondo de emergencia: la almohada que no se nota hasta que hace falta</h2>
+    </div>
+    <div class="prose-col">
+      <p>El dinero de emergencia es, en el fondo, una promesa que uno se hace a sí mismo: que un imprevisto no va a obligar a pedir prestado, vender algo con urgencia o dejar de pagar algo importante. No es un ahorro para un objetivo alegre, como un viaje o un electrodoméstico nuevo; es dinero que idealmente no se toca nunca, y que solo existe para absorber el golpe cuando algo sale mal.</p>
+      <p>La pregunta más común es cuánto se necesita, y la respuesta honesta es que depende de cada hogar. Lo que sí ayuda como punto de partida es pensar en gastos fijos esenciales — alimentación, vivienda, servicios básicos — y calcular cuántos meses de esos gastos se querría tener cubiertos si el ingreso principal se interrumpiera de un día para otro.</p>
+      <p>Formarlo no requiere una suma grande de una sola vez, y de hecho esperar a tener “suficiente dinero extra” para empezar suele ser la razón por la que nunca se empieza. Funciona mejor tratarlo como un compromiso pequeño y constante: un monto fijo, así sea modesto, apartado antes de que el resto del ingreso se distribuya en otras cosas.</p>
+      <p>Y conviene guardarlo en un lugar separado del resto del dinero disponible, no necesariamente inaccesible, pero sí distinto — para que no se mezcle con el flujo normal del mes y termine gastado sin que uno se dé cuenta. La disciplina no está en la fuerza de voluntad de no tocarlo, sino en ponerlo fuera del camino de las decisiones cotidianas.</p>
+      <p style="font-size:14px; color:var(--ink-soft); font-style:italic; margin-top:2em;">Contenido informativo y educativo. No constituye asesoría financiera personalizada.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ARTÍCULO 3 — GASTOS HORMIGA ============ -->
+<section class="section" id="gastos-hormiga">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Gastos cotidianos · 10 de junio de 2026 · William de Jesús Rodríguez Lopera</span>
+      <h2>Gastos hormiga: esos centavos que se comen el mes entero</h2>
+    </div>
+    <div class="prose-col">
+      <p>Se llaman gastos hormiga porque, uno por uno, parecen insignificantes: el cafecito de camino al mercado, la app de delivery que se usa “solo por hoy”, la suscripción que se activó hace meses y ya nadie recuerda para qué era. El problema nunca es el gasto individual, sino la repetición silenciosa que ninguna memoria alcanza a sumar sin ayuda.</p>
+      <p>La manera más simple de identificarlos no es prohibirse nada de entrada, sino anotar durante dos o tres semanas cada gasto pequeño, sin juzgarlo todavía. Casi siempre aparece un patrón sorprendente: no es un solo gasto grande el que desordena el mes, sino cuatro o cinco pequeños que se repiten con más frecuencia de la que uno creía.</p>
+      <p>Una vez identificado el patrón, la decisión no tiene que ser eliminar todo de golpe. Muchas veces basta con hacerlo consciente: decidir de antemano cuántas veces a la semana ese gasto tiene sentido, en lugar de que ocurra por inercia. El gasto hormiga pierde su poder no cuando desaparece, sino cuando deja de ser automático.</p>
+      <p>Vale la pena también revisar, una vez al año, todo lo que se paga de forma recurrente y automática: suscripciones, membresías, servicios que se contrataron en un momento puntual. Son los gastos hormiga más difíciles de notar, porque no requieren ninguna decisión nueva cada mes; simplemente siguen cobrando hasta que alguien se detiene a mirar.</p>
+      <p style="font-size:14px; color:var(--ink-soft); font-style:italic; margin-top:2em;">Contenido informativo y educativo. No constituye asesoría financiera personalizada.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ARTÍCULO 4 — NECESIDAD VS CAPRICHO ============ -->
+<section class="section alt" id="necesidad-o-capricho">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Decisiones de consumo · 28 de mayo de 2026 · William de Jesús Rodríguez Lopera</span>
+      <h2>La diferencia entre necesidad y capricho no siempre es tan clara</h2>
+    </div>
+    <div class="prose-col">
+      <p>Es tentador pensar que la línea entre necesidad y capricho es evidente: comer es necesidad, un antojo es capricho. Pero en la práctica esa línea se mueve según el contexto, y tratar de trazarla con una regla rígida suele generar más culpa que claridad. Lo útil no es una definición perfecta, sino una pregunta honesta que se pueda hacer en el momento de decidir.</p>
+      <p>Una necesidad, en términos prácticos, es aquello cuya ausencia genera un problema real: no pagarlo tiene una consecuencia concreta, como quedarse sin transporte para ir a trabajar o sin un medicamento que se usa a diario. Un capricho, en cambio, mejora el momento pero su ausencia no genera ningún problema estructural; simplemente el día transcurre igual, sin ese gasto.</p>
+      <p>Donde se complica la distinción es en la zona intermedia: cosas que no son estrictamente necesarias pero que sostienen el ánimo, la vida social o el descanso, y que también tienen un valor real en la economía de un hogar. La meta no es eliminar esa zona intermedia, sino ser consciente de que existe y decidir con esa información, en lugar de negar que ese gasto tiene un lugar legítimo si el presupuesto lo permite.</p>
+      <p>Una pregunta que ayuda más que cualquier regla es preguntarse si esa compra se sostendría igual de atractiva dentro de una semana, sin la presión del momento. No para prohibirla, sino para separar el impulso de la decisión, y dejar que sea la decisión, no el impulso, la que finalmente pague la cuenta.</p>
+      <p style="font-size:14px; color:var(--ink-soft); font-style:italic; margin-top:2em;">Contenido informativo y educativo. No constituye asesoría financiera personalizada.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ARTÍCULO 5 — INGRESO IRREGULAR ============ -->
+<section class="section" id="ahorro-ingreso-irregular">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Ahorro con ingreso variable · 14 de mayo de 2026 · William de Jesús Rodríguez Lopera</span>
+      <h2>Cómo ahorrar aunque el ingreso sea irregular</h2>
+    </div>
+    <div class="prose-col">
+      <p>La mayoría de los consejos de ahorro parten de un supuesto que no siempre es cierto: que el ingreso llega en un monto fijo, el mismo día de cada mes. Cuando el ingreso varía — por trabajo independiente, por temporadas, por ventas — ese tipo de consejo se vuelve difícil de aplicar, y a veces hasta desalentador, porque no encaja con la realidad del hogar.</p>
+      <p>Con ingreso variable, ahorrar un porcentaje fijo suele funcionar mejor que ahorrar un monto fijo. En lugar de decidir “voy a apartar tanto dinero cada mes”, funciona más apartar “un porcentaje de lo que entre, entre lo que entre”. En los meses buenos se ahorra más en términos absolutos, y en los meses flojos se sigue ahorrando algo, sin la presión de cumplir una cifra que ese mes no era realista.</p>
+      <p>También ayuda pensar en los gastos fijos con base en el mes más flojo del año, no en el promedio ni en el mejor mes. Si los compromisos esenciales se pueden cubrir incluso en el mes de menor ingreso, los meses buenos dejan de sentirse como el único momento posible para respirar, y se pueden usar con más libertad para ahorrar o adelantar cosas.</p>
+      <p>Por último, conviene separar mentalmente — y si es posible, también físicamente — el ingreso irregular en dos partes apenas entra: una porción para vivir el mes, y otra que se aparta de inmediato antes de que se mezcle con el resto. Cuanto más rápido ocurra esa separación después de recibir el dinero, menos espacio hay para que el gasto cotidiano se lo vaya llevando poco a poco.</p>
+      <p style="font-size:14px; color:var(--ink-soft); font-style:italic; margin-top:2em;">Contenido informativo y educativo. No constituye asesoría financiera personalizada.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PUBLICACIONES (fichas, sin enlaces externos) ============ -->
+<section class="section alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Publicaciones recientes</span>
+      <h2>Lo último en el cuaderno</h2>
+    </div>
+    <div class="posts-grid">
+      <article class="post-card">
+        <span class="post-date">3 de julio de 2026</span>
+        <h3>Cómo organizar el presupuesto del hogar</h3>
+        <p>Un mapa honesto de lo que entra y lo que sale, sin listas de prohibiciones.</p>
+        <div class="post-author">William de Jesús Rodríguez Lopera</div>
+      </article>
+      <article class="post-card">
+        <span class="post-date">22 de junio de 2026</span>
+        <h3>El fondo de emergencia</h3>
+        <p>Por qué ese dinero que no se toca es, en realidad, el más importante de todos.</p>
+        <div class="post-author">William de Jesús Rodríguez Lopera</div>
+      </article>
+      <article class="post-card">
+        <span class="post-date">10 de junio de 2026</span>
+        <h3>Gastos hormiga</h3>
+        <p>Los centavos que, sumados, terminan pesando más que cualquier gasto grande.</p>
+        <div class="post-author">William de Jesús Rodríguez Lopera</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACERCA DE ============ -->
+<section class="section" id="acerca-de">
+  <div class="container about-grid">
+    <div>
+      <span class="eyebrow">Acerca de</span>
+      <h2 style="font-size:32px;">Quién escribe estas páginas</h2>
+    </div>
+    <div class="prose-col">
+      <p><strong>Activo Empresa Locales</strong> está escrito y administrado por William de Jesús Rodríguez Lopera, titular único responsable del sitio. Nació como un espacio de divulgación sobre finanzas domésticas, pensado especialmente para amas de casa que administran el presupuesto familiar día a día y no siempre encuentran contenido que hable de dinero sin tecnicismos ni presión de venta.</p>
+      <p>El método de trabajo es sencillo: cada texto se escribe para explicar un concepto financiero cotidiano —presupuesto, ahorro, gasto— de la forma más clara posible, evitando promesas de resultados y evitando también el lenguaje que suelen usar los bancos o las entidades de crédito para vender productos.</p>
+      <p><strong>Activo Empresa Locales es un proyecto independiente.</strong> No pertenece a ningún banco, cooperativa, plataforma financiera ni organismo oficial, no representa a ninguna marca de terceros y no recibe contenido ni línea editorial de ninguna institución financiera. Cuando el sitio menciona una entidad real, lo hace únicamente con fines descriptivos o comparativos, citando información pública, y sin sugerir vínculo alguno.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POLÍTICA EDITORIAL ============ -->
+<section class="section alt" id="politica-editorial">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Política editorial</span>
+      <h2>Cómo se decide qué se publica</h2>
+    </div>
+    <div class="prose-col">
+      <p>Cada artículo de Activo Empresa Locales es escrito por su titular, William de Jesús Rodríguez Lopera, con un objetivo único: explicar conceptos de finanzas domésticas de forma clara y honesta. El sitio no publica contenido patrocinado disfrazado de artículo editorial, y la presencia de publicidad —a través de Google AdSense— no influye en qué temas se tratan ni en qué se afirma dentro de un texto.</p>
+      <p>Cuando un artículo menciona datos económicos, cifras o referencias a instituciones reales, se procura contrastar esa información con fuentes públicas y oficiales disponibles al momento de escribir. El sitio no ofrece asesoría financiera personalizada, no recomienda productos concretos de ninguna entidad y no promete resultados de ahorro, inversión o crédito.</p>
+      <p>Cualquier mención a bancos, cooperativas o entidades financieras se hace exclusivamente como referencia informativa o de análisis general. Activo Empresa Locales no tiene afiliación, vínculo comercial ni representación oficial con ninguna de esas entidades; el contenido es exclusivamente informativo y educativo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACTO (texto, sin formulario) ============ -->
+<section class="section" id="contacto">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Contacto</span>
+      <h2>Cómo comunicarse con el sitio</h2>
+    </div>
+    <div class="prose-col">
+      <p>Activo Empresa Locales es un sitio de solo lectura y no incluye formularios de contacto ni de suscripción. Para cualquier consulta editorial, corrección o comentario sobre el contenido, la vía de contacto es directa:</p>
+      <p>
+        Correo electrónico: <a href="mailto:soporte@activoempresalocales.blog">soporte@activoempresalocales.blog</a><br>
+        Teléfono / WhatsApp: +58 414-5125984<br>
+        Dirección: Calle 195, Maracay 2002, Venezuela
+      </p>
+      <p style="font-size:14px; color:var(--ink-soft);">Activo Empresa Locales nunca solicitará, por correo, teléfono o cualquier otro medio, contraseñas, números de tarjeta, datos bancarios o documentos de identidad.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRIVACIDAD Y COOKIES ============ -->
+<section class="section alt" id="privacidad">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Política de privacidad y cookies</span>
+      <h2>Qué información se recopila</h2>
+    </div>
+    <div class="prose-col">
+      <p>Activo Empresa Locales no incluye formularios, por lo que no recopila directamente nombres, correos ni mensajes a través del sitio. La navegación por estas páginas puede generar datos técnicos estándar —como dirección IP o tipo de navegador— recogidos automáticamente por el servicio de alojamiento con fines de funcionamiento y seguridad.</p>
+      <p>El sitio muestra publicidad a través de Google AdSense. Google, como tercero, puede utilizar cookies u otras tecnologías similares para mostrar anuncios en función de visitas anteriores del usuario a este u otros sitios. Quien visita esta página puede consultar y ajustar sus preferencias de anuncios directamente en la configuración de Google.</p>
+      <p>Activo Empresa Locales no vende, alquila ni comparte información personal con fines comerciales, y no existe en el sitio ningún mecanismo para iniciar sesión, recuperar contraseñas o acceder a cuentas de terceros.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AVISO LEGAL ============ -->
+<section class="section" id="aviso-legal">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Aviso legal</span>
+      <h2>Titularidad y propiedad intelectual</h2>
+    </div>
+    <div class="prose-col">
+      <p>El sitio web activoempresalocales.blog es propiedad y responsabilidad exclusiva de William de Jesús Rodríguez Lopera, titular único del proyecto Activo Empresa Locales, con domicilio en Calle 195, Maracay 2002, Venezuela, y contacto en soporte@activoempresalocales.blog.</p>
+      <p>Los textos, la marca, el diseño y los elementos gráficos originales de este sitio son propiedad de su titular, salvo cuando se indique lo contrario. Su reproducción total o parcial sin autorización no está permitida. Las referencias a marcas, bancos o entidades de terceros se realizan con fines exclusivamente informativos, descriptivos o de análisis, sin que ello implique afiliación, patrocinio ni representación de dichas entidades.</p>
+      <p>Activo Empresa Locales no es un banco, una entidad financiera, una cooperativa ni un organismo del Estado, y no ofrece, gestiona ni intermedia productos financieros de ningún tipo. La información publicada tiene un propósito exclusivamente educativo y no debe interpretarse como asesoría financiera, legal ni contable personalizada.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PIE ============ -->
+<footer class="site-footer" id="pie">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">Activo Empresa Locales</div>
+        <p>Blog independiente de educación financiera para el hogar.</p>
+        <p>Titular responsable: William de Jesús Rodríguez Lopera</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="mailto:soporte@activoempresalocales.blog">soporte@activoempresalocales.blog</a>
+        <p>+58 414-5125984</p>
+        <p>Calle 195, Maracay 2002, Venezuela</p>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#politica-editorial">Política editorial</a>
+        <a href="#privacidad">Privacidad y cookies</a>
+        <a href="#aviso-legal">Aviso legal</a>
+      </div>
+    </div>
+    <p class="footer-disclaimer">Activo Empresa Locales no tiene afiliación, vínculo comercial ni representación oficial con ningún banco, cooperativa, entidad financiera u organismo del Estado mencionado en este sitio. Todo el contenido es exclusivamente informativo y educativo, y no constituye asesoría financiera personalizada.</p>
+    <p class="footer-bottom">© 2026 Activo Empresa Locales — William de Jesús Rodríguez Lopera. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
 </body>
 </html>
